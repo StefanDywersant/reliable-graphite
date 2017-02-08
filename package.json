@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Reliable Graphite client",
   "main": "graphite.js",
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
