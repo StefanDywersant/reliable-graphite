@@ -1,0 +1,23 @@
+{
+  "name": "reliable-graphite",
+  "version": "1.0.0",
+  "description": "Reliable Graphite client",
+  "main": "graphite.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanDywersant/reliable-graphite.git"
+  },
+  "keywords": [
+    "graphite",
+    "carbon"
+  ],
+  "author": "Karol Maciaszek <karol@maciaszek.pl> (https://github.com/StefanDywersant)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StefanDywersant/reliable-graphite/issues"
+  },
+  "homepage": "https://github.com/StefanDywersant/reliable-graphite#readme"
+}
