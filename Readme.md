@@ -4,29 +4,31 @@ Graphite client which buffers metrics on remote service downtime.
 
 ## Installation
 
-	$ npm install --save reliable-graphite
+```sh
+$ npm install --save reliable-graphite
+```
 
 ## Example
 
 ### Simple usage
 
-	const Graphite = require('reliable-graphite'),
-		graphite = new Graphite(<host>, <port>);
+```javascript
+const Graphite = require('reliable-graphite'),
+	graphite = new Graphite(<host>, <port>);
 
-	graphite.push('metric1', 100);
+graphite.push('metric1', 100);
+```
 	
-This will produce logs similar to:
-
-	info: HTTP karol@127.0.0.1 GET / took=11ms
-
 ## API
 
-	const graphite = new Graphite(host, port, {
-		socket_timeout: 300000,
-		socket_reconnect_delay: 1000,
-		queue_size_limit: 10000000,
-		chunk_size: 200
-	});
+```javascript
+const graphite = new Graphite(host, port, {
+	socket_timeout: 300000,
+	socket_reconnect_delay: 1000,
+	queue_size_limit: 10000000,
+	chunk_size: 200
+});
+```
 
 Where config is an object with following optional properties:
 
@@ -38,8 +40,9 @@ Where config is an object with following optional properties:
 
 * chunk_size - *number (default 200)* - Indicates how many metric lines will be pushed to Graphite server at once
 
-
-	graphite.push(name, value, ts);
+```javascript
+graphite.push(name, value, ts);
+```
 	
 Arguments:
 
@@ -49,6 +52,8 @@ Arguments:
 
 * ts - *number (default Date.now())* - Metric timestamp (in milliseconds)
 
+
+## Author
 
 Karol Maciaszek <karol@maciaszek.pl>
 
