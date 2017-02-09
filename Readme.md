@@ -1,6 +1,6 @@
 # reliable-graphite
 
-Graphite client which buffers metrics on remote service downtime.
+Graphite client which buffers metrics when e.g. remote server is down.
 
 ## Installation
 
@@ -8,9 +8,7 @@ Graphite client which buffers metrics on remote service downtime.
 $ npm install --save reliable-graphite
 ```
 
-## Example
-
-### Simple usage
+## Simple usage
 
 ```javascript
 const Graphite = require('reliable-graphite'),
@@ -21,12 +19,15 @@ graphite.push('metric1', 100);
 	
 ## API
 
+### Creating Graphite client
+
 ```javascript
 const graphite = new Graphite(host, port, {
 	socket_timeout: 300000,
 	socket_reconnect_delay: 1000,
 	queue_size_limit: 10000000,
-	chunk_size: 200
+	chunk_size: 200,
+	logger: (severity, message) => console[severity](message)
 });
 ```
 
@@ -39,6 +40,11 @@ Where config is an object with following optional properties:
 * queue_size_limit - *number (default 10000000)* - When Graphite server is down the metric lines will be buffered up to this count. *graphite.push()* will throw exception once this limit is exceeded.
 
 * chunk_size - *number (default 200)* - Indicates how many metric lines will be pushed to Graphite server at once
+
+* logger - *function(string, string)* - Logs are written to the console by default. You can override this behaviour by providing custom logger.
+
+
+### Pushing metric line to remote server
 
 ```javascript
 graphite.push(name, value, ts);
