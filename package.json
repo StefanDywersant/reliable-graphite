@@ -1,6 +1,6 @@
 {
   "name": "reliable-graphite",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Reliable Graphite client",
   "main": "graphite.js",
   "engines": {
