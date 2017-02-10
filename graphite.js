@@ -121,7 +121,7 @@ class Graphite {
 	 *
 	 * @param {string} name Metric name
 	 * @param {number} value Metric value
-	 * @param {string} ts Metric timestamp
+	 * @param {number} ts Metric timestamp
 	 */
 	push(name, value, ts) {
 		if (this.queue.length > this.config.queue_size_limit) {
